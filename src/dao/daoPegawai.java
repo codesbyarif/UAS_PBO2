@@ -46,35 +46,14 @@ public class daoPegawai {
             try {
                 statement = connection.prepareStatement(selectKodePeg);
                 ResultSet rs = statement.executeQuery();
-                    while (rs.next()) 
-                    {
+                while (rs.next()) {
                     noUrut = rs.getInt("urut");
-                    }
-                }catch (SQLException ex) {
+                }
+            }catch (SQLException ex) {
                 
             }
             return + noUrut;
         }
-        
-        
-        public void SearchTextList(){
-              PreparedStatement statement = null;
-              String nama;
-              try {
-                  statement = connection.prepareStatement(cari);
-                  ResultSet rs = statement.executeQuery();
-                    while (rs.next()) 
-                        {
-                            nama = rs.getString("Cari");
-                        } 
-                   }catch (SQLException ex) {
-                          
-                        }
-                   return;
-        }
-        
-        
-        
         public void tambah(Pegawai peg) {
             PreparedStatement statement = null;
             try {
@@ -118,7 +97,6 @@ public class daoPegawai {
             }
         }
         
-    
         public int cekUser(String user) {
             PreparedStatement statement = null;
             int ketemu = 0;
@@ -230,8 +208,6 @@ public class daoPegawai {
             }  
             return listPeg;
         }
-        
-       
 
 
 }

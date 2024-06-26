@@ -6,44 +6,42 @@ package model;
 
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-
 /**
  *
- * @author user
+ * @author User
  */
-public class TabelModelBarang extends AbstractTableModel{
-    
+public class TabelModelCariBarang extends AbstractTableModel {
     List<Barang> listBrg;
     
-    public TabelModelBarang(List<Barang> listBrg) {
+    public TabelModelCariBarang(List<Barang> listBrg){
         this.listBrg = listBrg;
     }
     
     @Override
-    public int getRowCount() {
+    public int getRowCount(){
         return listBrg.size();
     }
     
     @Override
-    public int getColumnCount() {
+    public int getColumnCount(){
         return 5;
     }
     
-    @Override 
-    public Object getValueAt(int row, int column) {
-        return switch (column) {
+    @Override
+    public Object getValueAt(int row, int column){
+        return switch (column){
             case 0 -> listBrg.get(row).getKode();
             case 1 -> listBrg.get(row).getNama();
             case 2 -> listBrg.get(row).getJumlah();
             case 3 -> listBrg.get(row).getHarga();
             case 4 -> listBrg.get(row).getMerek();
-            default -> null;    
-        };        
+            default -> null;
+        };
     }
     
     @Override
-    public String getColumnName(int column) {
-        return switch (column) {
+    public String getColumnName(int column){
+        return switch(column){
             case 0 -> "Kode Barang";
             case 1 -> "Nama Barang";
             case 2 -> "Jumlah";

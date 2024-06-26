@@ -5,18 +5,21 @@
 package view;
 
 import controller.controllerMenuUtama;
+
+import view.FormBarang;
 /**
  *
  * @author USER
  */
 public class MenuUtama extends javax.swing.JFrame {
-    controllerMenuUtama cMenu;
+    controllerMenuUtama cMenuUtama;
+    
     /**
      * Creates new form MenuUtama
      */
     public MenuUtama() {
         initComponents();
-    cMenu = new controllerMenuUtama(this);   
+        cMenuUtama = new controllerMenuUtama(this);
     }
 
     /**
@@ -73,14 +76,14 @@ public class MenuUtama extends javax.swing.JFrame {
         pencarian.setText("Pencarian");
 
         cariBarang.setText("Cari Barang");
+        cariBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cariBarangActionPerformed(evt);
+            }
+        });
         pencarian.add(cariBarang);
 
         cariPegawai.setText("Cari Pegawai");
-        cariPegawai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cariPegawaiActionPerformed(evt);
-            }
-        });
         pencarian.add(cariPegawai);
 
         jMenuBar1.add(pencarian);
@@ -106,23 +109,25 @@ public class MenuUtama extends javax.swing.JFrame {
 
     private void masterBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masterBarangActionPerformed
         // TODO add your handling code here:
-        cMenu.masukFormBarang();
+        cMenuUtama.masukFormBarang();      
+              
     }//GEN-LAST:event_masterBarangActionPerformed
 
     private void masterPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masterPegawaiActionPerformed
         // TODO add your handling code here:
-        cMenu.masukFormPegawai();
+        cMenuUtama.masukFormPegawai();
     }//GEN-LAST:event_masterPegawaiActionPerformed
 
     private void masterLupaPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masterLupaPassActionPerformed
         // TODO add your handling code here:
-        cMenu.masukFormLupaPass();
+        cMenuUtama.masukFormLupaPass();
              
     }//GEN-LAST:event_masterLupaPassActionPerformed
 
-    private void cariPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariPegawaiActionPerformed
+    private void cariBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariBarangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cariPegawaiActionPerformed
+        cMenuUtama.masukFormCariBarang();
+    }//GEN-LAST:event_cariBarangActionPerformed
 
     /**
      * @param args the command line arguments
