@@ -67,6 +67,8 @@ public class FormCariBarang extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("FORM CARI BARANG");
 
@@ -86,6 +88,8 @@ public class FormCariBarang extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        jPanel2.setBackground(new java.awt.Color(51, 255, 204));
 
         jLabel2.setText("Masukkan Nama Barang :");
 
@@ -154,7 +158,7 @@ public class FormCariBarang extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
