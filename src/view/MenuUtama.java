@@ -7,20 +7,44 @@ package view;
 import controller.controllerMenuUtama;
 
 import view.FormBarang;
+
+import javax.swing.Timer;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author USER
  */
 public class MenuUtama extends javax.swing.JFrame {
     controllerMenuUtama cMenuUtama;
-    
+        public MenuUtama() {
+        initComponents();
+        Timer timer = new Timer(1000, this::formJamMenitActionPerformed);
+        timer.start();
+    }
+        
+private void updateClockAndDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        formJamMenit.setText(sdf.format(new Date()));
+    }
     /**
      * Creates new form MenuUtama
      */
-    public MenuUtama() {
-        initComponents();
-        cMenuUtama = new controllerMenuUtama(this);
-    }
+//    public MenuUtama() {
+//        initComponents();
+//        cMenuUtama = new controllerMenuUtama(this);
+//        // Timer untuk memperbarui waktu
+//        Timer timer = new Timer(1000, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//                jTextField1.setText(sdf.format(new Date()));
+//            }
+//        });
+//        timer.start();
+//    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,6 +55,7 @@ public class MenuUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        formJamMenit = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         master = new javax.swing.JMenu();
         masterBarang = new javax.swing.JMenuItem();
@@ -43,6 +68,12 @@ public class MenuUtama extends javax.swing.JFrame {
         keluar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        formJamMenit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                formJamMenitActionPerformed(evt);
+            }
+        });
 
         master.setText("Master");
 
@@ -97,11 +128,17 @@ public class MenuUtama extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addComponent(formJamMenit, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(formJamMenit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,6 +165,10 @@ public class MenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         cMenuUtama.masukFormCariBarang();
     }//GEN-LAST:event_cariBarangActionPerformed
+
+    private void formJamMenitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formJamMenitActionPerformed
+        updateClockAndDate();
+    }//GEN-LAST:event_formJamMenitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +208,7 @@ public class MenuUtama extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cariBarang;
     private javax.swing.JMenuItem cariPegawai;
+    private javax.swing.JTextField formJamMenit;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu keluar;
